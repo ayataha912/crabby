@@ -63,3 +63,19 @@ fn fahrenheit_to_celsius() {
         {temp_input} F is {temp_converted} C. \n"
     );
 }
+fn celsius_to_kelvin_converter() {
+    println!("Enter a Celsius temperature:");
+
+    let mut temp_input = String::new();
+    io::stdin()
+        .read_line(&mut temp_input)
+        .expect("Failed to read.");
+
+    let temp_input = temp_input.trim().parse::<f64>().unwrap();
+    let temp_converted: f64 = celsius_to_kelvin(temp_input);
+
+    println!(
+        "************************************************* \n
+        {} C is {} K. \n", temp_input, temp_converted
+    );
+}
